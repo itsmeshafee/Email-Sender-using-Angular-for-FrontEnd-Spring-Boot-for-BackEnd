@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="card">
+        <form (ngSubmit)="doSubmitForm()" action="">
+        <h1>Compose Mail</h1>
+
+        <!--To Filed-->
+        <mat-form-field class="field" appearance="outline">
+            <mat-label>To</mat-label>
+                <input name="to" [(ngModel)]="data.to" matInput required>
+        </mat-form-field>
+        
+        <!--Subject Filed-->
+        <mat-form-field class="field" appearance="outline">
+            <mat-label>Subject</mat-label>
+                <input name="subject" [(ngModel)]="data.subject" matInput required>
+        </mat-form-field>
+
+        <!--Message Filed-->
+        <mat-form-field class="example-full-width field" appearance="outline">
+            <mat-label>Enter your message</mat-label>
+                <textarea name="message" [(ngModel)]="data.message" rows="10" matInput placeholder="Ex. Hey, What are you doing" required></textarea>
+        </mat-form-field>
+
+        <!--Submit & Reset Filed-->
+        <div class="text-center">
+            <mat-spinner *ngIf="flag" style="margin: auto;"></mat-spinner>
+            <button [disabled]="flag" type="submit" mat-raised-button color="primary">Send</button>
+            <button type="reset" mat-raised-button color="accent">Reset</button>
+        </div>
+        </form>
+    </div>
+</div>
